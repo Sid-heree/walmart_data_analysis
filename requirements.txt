@@ -1,0 +1,51 @@
+Project Setup Guide:
+
+We have to do make first .kaggle directory  check step 3:
+then we have to move .json file of api token into it
+
+1.Create Virtual Environment
+python -m venv venv
+
+# Activate virtual environment (Windows)
+venv\Scripts\activate
+
+# Activate virtual environment (Mac/Linux)
+source venv/bin/activate
+
+
+2️. Install Required Libraries
+pip install pandas, numpy, pymysql(adapter) ,sqlalchemy, kaggle
+
+
+3.FOR API :
+Kaggle Configuration (Windows)
+# Create Kaggle directory
+mkdir %USERPROFILE%\.kaggle
+
+# Move kaggle.json file into:
+C:\Users\YourUsername\.kaggle\
+Make sure kaggle.json API token file  is downloaded from your Kaggle account.   
+
+Download Dataset from Kaggle
+# Example (replace with actual dataset slug means username-dataset name)
+kaggle datasets download -d dataset-name
+Unzip Dataset
+unzip dataset-name.zip
+
+4. Create SQLAlchemy Engine (MySQL)
+
+Example Python code to create a database engine:
+
+[import pandas as pd
+from sqlalchemy import create_engine
+
+# Database credentials
+username = "root"
+password = "your_password"
+host = "localhost"
+database = "your_database"
+
+# Create engine
+engine = create_engine(f"mysql+pymysql://{username}:{password}@{host}/{database}")]
+
+
